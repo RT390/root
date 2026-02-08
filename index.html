@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رسائل رمضان المبارك</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕌</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <!-- الخلفية الرمضانية -->
+        <div class="ramadan-background">
+            <div class="moon"></div>
+            <div class="stars"></div>
+            <div class="lanterns">
+                <div class="lantern lantern1"></div>
+                <div class="lantern lantern2"></div>
+                <div class="lantern lantern3"></div>
+            </div>
+            <div class="mosque-silhouette"></div>
+        </div>
+
+        <!-- شاشة الترحيب -->
+        <section id="welcome-screen" class="screen active">
+            <div class="screen-content">
+                <div class="header">
+                    <div class="title-container">
+                        <h1><i class="fas fa-moon"></i> رسائل رمضان المبارك <i class="fas fa-star"></i></h1>
+                        <div class="subtitle">كل عام وأنتم بخير</div>
+                    </div>
+                </div>
+                
+                <div class="welcome-card">
+                    <div class="welcome-icon">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+                    <h2>مرحباً بكم في شهر الرحمة والمغفرة</h2>
+                    <p>شارك محبة رمضان مع أحبائك عبر رسالة مباركة تصلهم في هذا الشهر الفضيل</p>
+                    <button id="start-btn" class="btn-primary">
+                        ابدأ بكتابة رسالتك <i class="fas fa-pen-fancy"></i>
+                    </button>
+                </div>
+                
+                <div class="instructions">
+                    <h3><i class="fas fa-info-circle"></i> كيفية الاستخدام</h3>
+                    <ol>
+                        <li>اكتب رسالتك وأدخل اسمك</li>
+                        <li>احصل على رابط مشاركة فريد</li>
+                        <li>أرسل الرابط لمن تريد</li>
+                        <li>سيتمكن المستلم من رؤية رسالتك بتصميم رمضاني فاخر</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <p>تقبل الله منا ومنكم صالح الأعمال | رمضان كريم</p>
+            </div>
+        </section>
+
+        <!-- شاشة كتابة الرسالة -->
+        <section id="message-screen" class="screen">
+            <div class="screen-content">
+                <div class="header">
+                    <h1><i class="fas fa-edit"></i> اكتب رسالتك الرمضانية</h1>
+                    <button id="back-btn" class="btn-back">
+                        <i class="fas fa-arrow-right"></i> العودة
+                    </button>
+                </div>
+                
+                <div class="message-form">
+                    <div class="form-group">
+                        <label for="sender-name"><i class="fas fa-user"></i> اسمك الكريم</label>
+                        <input type="text" id="sender-name" placeholder="اكتب اسمك هنا...">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message-text"><i class="fas fa-comment-alt"></i> رسالتك الرمضانية</label>
+                        <textarea id="message-text" rows="8" placeholder="اكتب رسالتك هنا... يمكنك التعبير عن التهاني والدعوات بمناسبة شهر رمضان المبارك"></textarea>
+                        <div class="textarea-info">
+                            <span id="char-count">0</span> / 500 حرف
+                        </div>
+                    </div>
+                    
+                    <div class="message-examples">
+                        <h4><i class="fas fa-lightbulb"></i> أفكار لرسائل رمضانية</h4>
+                        <div class="examples-container">
+                            <div class="example" data-example="كل عام وأنتم بخير، تقبل الله منا ومنكم صالح الأعمال، رمضان كريم وكل عام وأنتم إلى الله أقرب.">
+                                تهنية عامة
+                            </div>
+                            <div class="example" data-example="أسأل الله العلي القدير أن يتقبل صيامكم وقيامكم، وأن يجعله شهر خير وبركة عليكم وعلى جميع المسلمين.">
+                                دعاء خاص
+                            </div>
+                            <div class="example" data-example="رمضان كريم، جعله الله شهر فرح وسعادة وغفران لنا ولكم، وبلّغنا وإياكم صيامه وقيامه على الوجه الذي يرضيه.">
+                                تمنيات طيبة
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button id="generate-btn" class="btn-primary">
+                        <i class="fas fa-link"></i> إنشاء رابط المشاركة
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- شاشة عرض الرابط -->
+        <section id="link-screen" class="screen">
+            <div class="screen-content">
+                <div class="header">
+                    <h1><i class="fas fa-share-alt"></i> رابط مشاركة رسالتك</h1>
+                    <button id="back-to-message-btn" class="btn-back">
+                        <i class="fas fa-arrow-right"></i> تعديل الرسالة
+                    </button>
+                </div>
+                
+                <div class="link-result">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h2>تم إنشاء رسالتك بنجاح!</h2>
+                    <p>يمكنك الآن مشاركة الرابط التالي مع من تريد ليتمكن من رؤية رسالتك الرمضانية:</p>
+                    
+                    <div class="link-container">
+                        <input type="text" id="generated-link" readonly>
+                        <button id="copy-btn" class="btn-copy">
+                            <i class="fas fa-copy"></i> نسخ الرابط
+                        </button>
+                    </div>
+                    
+                    <div class="link-actions">
+                        <button id="whatsapp-btn" class="btn-social">
+                            <i class="fab fa-whatsapp"></i> مشاركة عبر واتساب
+                        </button>
+                        <button id="new-message-btn" class="btn-secondary">
+                            <i class="fas fa-plus"></i> إنشاء رسالة جديدة
+                        </button>
+                    </div>
+                    
+                    <div class="message-preview">
+                        <h4><i class="fas fa-eye"></i> معاينة الرسالة</h4>
+                        <div class="preview-content">
+                            <p id="preview-text"></p>
+                            <div class="preview-sender">
+                                <i class="fas fa-user"></i> من: <span id="preview-sender"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- شاشة عرض الرسالة (للمستلم) -->
+        <section id="view-message-screen" class="screen">
+            <div class="screen-content">
+                <div class="header">
+                    <h1><i class="fas fa-moon"></i> رسالة رمضانية</h1>
+                    <button id="back-to-home-btn" class="btn-back">
+                        <i class="fas fa-home"></i> الصفحة الرئيسية
+                    </button>
+                </div>
+                
+                <div class="message-view">
+                    <div class="view-header">
+                        <div class="view-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h2>رسالة خاصة بمناسبة شهر رمضان المبارك</h2>
+                        <div class="view-subtitle">
+                            <i class="fas fa-calendar-alt"></i> رمضان <span id="current-year"></span> هـ
+                        </div>
+                    </div>
+                    
+                    <div class="message-card">
+                        <div class="message-content" id="view-message-text">
+                            <!-- سيتم عرض الرسالة هنا عبر JavaScript -->
+                        </div>
+                        
+                        <div class="sender-info">
+                            <div class="sender-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="sender-details">
+                                <h4>المرسل:</h4>
+                                <p id="view-sender-name"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="ramadan-quote">
+                            <i class="fas fa-quote-right"></i>
+                            <p>"شهر رمضان الذي أنزل فيه القرآن هدى للناس وبينات من الهدى والفرقان"</p>
+                            <div class="quote-reference">- سورة البقرة، الآية 185</div>
+                        </div>
+                    </div>
+                    
+                    <div class="view-actions">
+                        <button id="share-again-btn" class="btn-secondary">
+                            <i class="fas fa-share"></i> شارك هذه الرسالة
+                        </button>
+                        <button id="create-your-own-btn" class="btn-primary">
+                            <i class="fas fa-pen"></i> اكتب رسالتك الخاصة
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <p>تقبل الله منا ومنكم صالح الأعمال | رمضان كريم</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- إشعارات -->
+    <div id="notification" class="notification">
+        <span id="notification-text"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
